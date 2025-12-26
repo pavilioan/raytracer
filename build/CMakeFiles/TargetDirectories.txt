@@ -1,0 +1,3 @@
+/Users/christiantarrasch/Documents/raytracer/build/CMakeFiles/raytracer.dir
+/Users/christiantarrasch/Documents/raytracer/build/CMakeFiles/edit_cache.dir
+/Users/christiantarrasch/Documents/raytracer/build/CMakeFiles/rebuild_cache.dir
