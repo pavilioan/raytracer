@@ -794,7 +794,13 @@ CMakeFiles/raytracer.dir/src/main.cpp.o
  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdarg.h
  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h
  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h
+ /Users/christiantarrasch/Documents/raytracer/include/camera.h
  /Users/christiantarrasch/Documents/raytracer/include/color.h
+ /Users/christiantarrasch/Documents/raytracer/include/hittable.h
+ /Users/christiantarrasch/Documents/raytracer/include/hittable_list.h
+ /Users/christiantarrasch/Documents/raytracer/include/interval.h
  /Users/christiantarrasch/Documents/raytracer/include/ray.h
+ /Users/christiantarrasch/Documents/raytracer/include/rtweekend.h
+ /Users/christiantarrasch/Documents/raytracer/include/sphere.h
  /Users/christiantarrasch/Documents/raytracer/include/vec3.h
 

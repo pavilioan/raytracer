@@ -1,7 +1,8 @@
 CMakeFiles/raytracer.dir/src/main.cpp.o: \
   /Users/christiantarrasch/Documents/raytracer/src/main.cpp \
-  /Users/christiantarrasch/Documents/raytracer/include/color.h \
-  /Users/christiantarrasch/Documents/raytracer/include/vec3.h \
+  /Users/christiantarrasch/Documents/raytracer/include/camera.h \
+  /Users/christiantarrasch/Documents/raytracer/include/hittable.h \
+  /Users/christiantarrasch/Documents/raytracer/include/rtweekend.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
@@ -793,4 +794,9 @@ CMakeFiles/raytracer.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h \
-  /Users/christiantarrasch/Documents/raytracer/include/ray.h
+  /Users/christiantarrasch/Documents/raytracer/include/color.h \
+  /Users/christiantarrasch/Documents/raytracer/include/vec3.h \
+  /Users/christiantarrasch/Documents/raytracer/include/interval.h \
+  /Users/christiantarrasch/Documents/raytracer/include/ray.h \
+  /Users/christiantarrasch/Documents/raytracer/include/hittable_list.h \
+  /Users/christiantarrasch/Documents/raytracer/include/sphere.h
