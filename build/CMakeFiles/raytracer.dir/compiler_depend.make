@@ -798,6 +798,7 @@ CMakeFiles/raytracer.dir/src/main.cpp.o: /Users/christiantarrasch/Documents/rayt
   /Users/christiantarrasch/Documents/raytracer/include/hittable.h \
   /Users/christiantarrasch/Documents/raytracer/include/hittable_list.h \
   /Users/christiantarrasch/Documents/raytracer/include/interval.h \
+  /Users/christiantarrasch/Documents/raytracer/include/material.h \
   /Users/christiantarrasch/Documents/raytracer/include/ray.h \
   /Users/christiantarrasch/Documents/raytracer/include/rtweekend.h \
   /Users/christiantarrasch/Documents/raytracer/include/sphere.h \
@@ -1593,6 +1594,8 @@ CMakeFiles/raytracer.dir/src/main.cpp.o: /Users/christiantarrasch/Documents/rayt
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/concepts:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__math/roots.h:
+
+/Users/christiantarrasch/Documents/raytracer/include/material.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/has_unique_object_representation.h:
 

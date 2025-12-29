@@ -798,5 +798,6 @@ CMakeFiles/raytracer.dir/src/main.cpp.o: \
   /Users/christiantarrasch/Documents/raytracer/include/interval.h \
   /Users/christiantarrasch/Documents/raytracer/include/vec3.h \
   /Users/christiantarrasch/Documents/raytracer/include/ray.h \
+  /Users/christiantarrasch/Documents/raytracer/include/material.h \
   /Users/christiantarrasch/Documents/raytracer/include/hittable_list.h \
   /Users/christiantarrasch/Documents/raytracer/include/sphere.h
