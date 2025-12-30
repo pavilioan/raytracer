@@ -48,6 +48,11 @@ The renderer uses a backward ray tracing approach. For each pixel in the viewpor
 *A render of a metal sphere with added fuzziness.*
 
 -   **Metal (Reflective)**: Reflects rays perfectly about the normal. Fuzziness is added by perturbing the reflected ray endpoint within a small sphere.
+
+![Dielectric sphere](scenes/refracted.png)
+
+*A render of a refracted sphere using Snell's Law for refraction.*
+
 -   **Dielectric (Glass)**: Uses Snell's Law for refraction. Schlick's approximation is implemented to simulate varying reflectivity at grazing angles so we ain't gotta do all that.
 
 ### Camera Features
