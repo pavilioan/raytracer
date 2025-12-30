@@ -2,6 +2,8 @@
 
 ![Raytracer Header Image](scenes/concentric_bubble.png)
 
+*A render of concentric bubbles using the path tracer.*
+
 A C++ raytracer implementation based on Peter Shirley's "Ray Tracing in One Weekend." This project demonstrates the fundamentals of physically based rendering (PBR), including path tracing, material scattering, and stochastic sampling.
 
 ## Project Structure
