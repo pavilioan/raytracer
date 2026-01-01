@@ -82,7 +82,7 @@ The project now supports multithreaded rendering, significantly reducing render 
 | Single-threaded | 24.79s | 1x |
 | **Multithreaded** | **7.35s** | **3.37x** |
 
-*Note: Benchmarked on an 8-core M1 Macbook Air.*
+*Note: Benchmarked on an 8-core M1 Macbook Air. 100 samples per pixel with a 400 pixel image width.*
 
 ## Prerequisites
 
