@@ -1,8 +1,8 @@
 # Raytracer
 
-![Raytracer Header Image](scenes/concentric_bubble.png)
+![Raytracer Header Image](scenes/big.png)
 
-*A render of concentric bubbles using the path tracer.*
+*A render of multiple spheres using the path tracer. 1,000 samples per pixel with an 800 pixel image width.*
 
 A C++ raytracer implementation based on Peter Shirley's "Ray Tracing in One Weekend." This project demonstrates the fundamentals of physically based rendering (PBR), including path tracing, material scattering, and stochastic sampling.
 
@@ -66,8 +66,8 @@ The renderer uses a backward ray tracing approach. For each pixel in the viewpor
 
 ## Features
 
--   **Shapes**: Spheres.
--   **Multithreading**: Parallel rendering using C++ threads for faster image generation.
+-   **Spheres**: Spheres!
+-   **Multithreading**: Parallel rendering using threads for faster image generation.
 -   **Global Illumination**: Indirect lighting via recursive scattering.
 -   **Output**: PPM (Portable Pixel Map) image format.
 
