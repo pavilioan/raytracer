@@ -6,6 +6,11 @@
 #include "rtweekend.h"
 #include "vec3.h"
 
+#include <atomic>
+#include <mutex>
+#include <thread>
+#include <vector>
+
 class camera {
 public:
   double aspect_ratio = 1.0;  // Ratio width/height
@@ -26,20 +31,69 @@ public:
 
     std::cout << "P3\n" << image_width << " " << image_height << "\n255\n";
 
-    for (int j = 0; j < image_height; j++) {
-      std::clog << "\rScanlines remaining: " << (image_height - j) << " "
-                << std::flush;
-      for (int i = 0; i < image_width; i++) {
-        color pixel_color(0, 0, 0);
-        for (int sample = 0; sample < samples_per_pixel; sample++) {
-          ray r = get_ray(i, j);
-          pixel_color += ray_color(r, max_depth, world);
+    // Create a buffer to store pixel colors
+
+    std::vector<color> image_buffer(image_width * image_height);
+    std::atomic<int> scanlines_remaining{image_height};
+
+    // Determine number of threads
+
+    unsigned int num_threads = std::thread::hardware_concurrency();
+    if (num_threads == 0)
+      num_threads = 1; // Fallback if detection fails
+
+    std::vector<std::thread> threads;
+    std::mutex print_mutex; // Just in case we need to sync printing
+
+    auto render_lines = [&](int start_line, int end_line) {
+      for (int j = start_line; j < end_line; j++) {
+        // Update progress
+        int remaining = --scanlines_remaining;
+        if (remaining % 10 == 0 || remaining == 0) {
+          // Simple text output, might overlap but it's just progress
+          // Using clogs for progress
+          std::clog << "\rScanlines remaining: " << remaining << " "
+                    << std::flush;
         }
-        write_color(std::cout, pixel_samples_scale * pixel_color);
+
+        for (int i = 0; i < image_width; i++) {
+          color pixel_color(0, 0, 0);
+          for (int sample = 0; sample < samples_per_pixel; sample++) {
+            ray r = get_ray(i, j);
+            pixel_color += ray_color(r, max_depth, world);
+          }
+
+          // Store in buffer instead of printing
+          // Note: 'j' is 0 at top, so index calculation is straightforward
+
+          image_buffer[j * image_width + i] = pixel_samples_scale * pixel_color;
+        }
       }
+    };
+
+    // Divide work
+
+    int lines_per_thread = image_height / num_threads;
+    for (unsigned int t = 0; t < num_threads; ++t) {
+      int start = t * lines_per_thread;
+      int end =
+          (t == num_threads - 1) ? image_height : (t + 1) * lines_per_thread;
+      threads.emplace_back(render_lines, start, end);
+    }
+
+    // Wait for all threads
+
+    for (auto &t : threads) {
+      t.join();
     }
 
     std::clog << "\rDone.                   \n";
+
+    // Output the image from buffer
+
+    for (const auto &pixel : image_buffer) {
+      write_color(std::cout, pixel);
+    }
   }
 
 private:

@@ -57,14 +57,32 @@ The renderer uses a backward ray tracing approach. For each pixel in the viewpor
 
 ### Camera Features
 
+![Defocused sphere](scenes/DOF_sphere.png)
+
+*A render of a defocused sphere.*
+
 -   **Defocus Blur**: Simulates a real camera lens by originating rays from a random point on a "defocus disk" rather than a perfect point, creating a shallow depth of field effect.
 -   **Gamma Correction**: Colors are gamma-corrected (raised to power 1/2) before final output to ensure correct display on standard monitors.
 
 ## Features
 
 -   **Shapes**: Spheres.
+-   **Multithreading**: Parallel rendering using C++ threads for faster image generation.
 -   **Global Illumination**: Indirect lighting via recursive scattering.
 -   **Output**: PPM (Portable Pixel Map) image format.
+
+## Performance
+
+The project now supports multithreaded rendering, significantly reducing render times.
+
+**Benchmark Results:**
+
+| Version | Time (Real) | Speedup |
+| :--- | :--- | :--- |
+| Single-threaded | 24.79s | 1x |
+| **Multithreaded** | **7.35s** | **3.37x** |
+
+*Note: Benchmarked on an 8-core M1 Macbook Air.*
 
 ## Prerequisites
 
