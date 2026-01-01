@@ -130,5 +130,5 @@ The resulting `image.ppm` can be viewed with most image viewers that support the
 
 - [x] Multi-threading
 - [x] Render chrono
-- [] BVH
-- [] Mass-spring system
+- [ ] BVH
+- [ ] Mass-spring system
