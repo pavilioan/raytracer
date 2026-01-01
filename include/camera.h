@@ -7,6 +7,7 @@
 #include "vec3.h"
 
 #include <atomic>
+#include <chrono>
 #include <mutex>
 #include <thread>
 #include <vector>
@@ -73,6 +74,8 @@ public:
 
     // Divide work
 
+    auto start_time = std::chrono::high_resolution_clock::now();
+
     int lines_per_thread = image_height / num_threads;
     for (unsigned int t = 0; t < num_threads; ++t) {
       int start = t * lines_per_thread;
@@ -87,7 +90,10 @@ public:
       t.join();
     }
 
-    std::clog << "\rDone.                   \n";
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end_time - start_time;
+
+    std::clog << "\rDone. Render time: " << elapsed.count() << "s\n";
 
     // Output the image from buffer
 
